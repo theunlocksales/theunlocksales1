@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Dryfruit Meal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <span id="langText">हिंदी</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#2D5F3F" opacity="0.1"/>
+                    <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#2D5F3F"/>
+                    <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                </svg>
+                <span class="brand-name" data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li><a href="products.html" class="nav-link active" data-en="Products" data-hi="उत्पाद">Products</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                <li><a href="order.html" class="btn-nav" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="section-label" data-en="OUR PRODUCTS" data-hi="हमारे उत्पाद">OUR PRODUCTS</span>
+                <h1 class="hero-title" data-en="Premium Dryfruit Laddus Collection" data-hi="प्रीमियम ड्राईफ्रूट लड्डू कलेक्शन">
+                    Premium Dryfruit Laddus<br>Collection
+                </h1>
+                <p class="hero-description" data-en="Crafted with finest ingredients for families who value nutrition and quality." data-hi="बेहतरीन सामग्री से बने, उन परिवारों के लिए जो पोषण और गुणवत्ता को महत्व देते हैं।">
+                    Crafted with finest ingredients for families who value nutrition and quality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-preview">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label" data-en="ALL PRODUCTS" data-hi="सभी उत्पाद">ALL PRODUCTS</span>
+                <h2 class="section-title" data-en="Choose Your Premium Laddu" data-hi="अपना प्रीमियम लड्डू चुनें">Choose Your Premium Laddu</h2>
+            </div>
+
+            <div class="products-grid">
+                <!-- Methi Laddu -->
+                <div class="product-card">
+                  <div class="product-image">
+                  <img src="methi.jpg" alt="Methi ke Laddu">
+                </div>
+                                       
+
+                    <div class="product-info">
+                        <h3 data-en="Methi ke Laddu" data-hi="मेथी के लड्डू">Methi ke Laddu</h3>
+                        <p class="product-price">₹2,500/kg</p>
+
+                        <div class="quantity-selector">
+                            <label data-en="Select Quantity" data-hi="मात्रा चुनें">Select Quantity</label>
+                            <select id="methi-qty" onchange="updateCart('Methi ke Laddu', 2500)">
+                                <option value="1">1 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="3">3 kg</option>
+                            </select>
+                        </div>
+
+                        <div class="product-benefits">
+                            <h4 data-en="Key Benefits" data-hi="मुख्य लाभ">Key Benefits</h4>
+                            <ul>
+                                <li data-en="Helps maintain balanced lifestyle" data-hi="संतुलित जीवनशैली बनाए रखने में मदद करता है">Helps maintain balanced lifestyle</li>
+                                <li data-en="Supports natural energy" data-hi="प्राकृतिक ऊर्जा का समर्थन करता है">Supports natural energy</li>
+                                <li data-en="Good for daily routine" data-hi="दैनिक दिनचर्या के लिए उपयुक्त">Good for daily routine</li>
+                                <li data-en="Suitable for women & families" data-hi="महिलाओं और परिवारों के लिए उपयुक्त">Suitable for women & families</li>
+                                <li data-en="Helps in maintaining healthy weight" data-hi="स्वस्थ वजन बनाए रखने में मदद करता है">Helps in maintaining healthy weight</li>
+                                <li data-en="Good for kids and elders" data-hi="बच्चों और बुजुर्गों के लिए उपयुक्त">Good for kids and elders</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-usage">
+                            <h4 data-en="Best Time & Tips" data-hi="सर्वोत्तम समय और सुझाव">Best Time & Tips</h4>
+                            <p><span class="usage-label" data-en="Best time to eat:" data-hi="सर्वोत्तम समय:">Best time to eat:</span> After breakfast</p>
+                            <p><span class="usage-label" data-en="Avoid:" data-hi="बचाव:">Avoid:</span> Empty stomach</p>
+                            <p><span class="usage-label" data-en="Best with:" data-hi="सबसे अच्छा साथ:">Best with:</span> Milk or warm water</p>
+                        </div>
+
+                        <button class="btn-primary" data-en="Add to Cart" data-hi="कार्ट में जोड़ें" ><a href="order.html"><a href="order.html"><h4>Add to Cart</h4></a></button>
+                    </div>
+                </div>
+
+                <!-- Gond Laddu -->
+                <div class="product-card">
+                    <div class="product-image">
+    <img src="gond.png" alt="Gond ke Laddu">
+</div>
+                    <div class="product-info">
+                        <h3 data-en="Gond ke Laddu" data-hi="गोंद के लड्डू">Gond ke Laddu</h3>
+                        <p class="product-price">₹2,500/kg</p>
+
+                        <div class="quantity-selector">
+                            <label data-en="Select Quantity" data-hi="मात्रा चुनें">Select Quantity</label>
+                            <select id="gond-qty" onchange="updateCart('Gond ke Laddu', 2500)">
+                                <option value="1">1 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="3">3 kg</option>
+                            </select>
+                        </div>
+
+                        <div class="product-benefits">
+                            <h4 data-en="Key Benefits" data-hi="मुख्य लाभ">Key Benefits</h4>
+                            <ul>
+                                <li data-en="Supports body strength" data-hi="शरीर की शक्ति का समर्थन करता है">Supports body strength</li>
+                                <li data-en="Good for bones & joints (general support)" data-hi="हड्डियों और जोड़ों के लिए उपयुक्त (सामान्य समर्थन)">Good for bones & joints (general support)</li>
+                                <li data-en="Ideal for women after delivery" data-hi="प्रसव के बाद महिलाओं के लिए आदर्श">Ideal for women after delivery</li>
+                                <li data-en="Helps improve body stamina" data-hi="शरीर की स्थिरता में सुधार करता है">Helps improve body stamina</li>
+                                <li data-en="Supports blood circulation naturally" data-hi="रक्त संचार को प्राकृतिक रूप से समर्थन करता है">Supports blood circulation naturally</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-usage">
+                            <h4 data-en="Best Time & Tips" data-hi="सर्वोत्तम समय और सुझाव">Best Time & Tips</h4>
+                            <p><span class="usage-label" data-en="Best time:" data-hi="सर्वोत्तम समय:">Best time:</span> Morning after breakfast</p>
+                            <p><span class="usage-label" data-en="Also good:" data-hi="साथ में अच्छा:">Also good:</span> Evening 4–6 pm</p>
+                            <p><span class="usage-label" data-en="Best with:" data-hi="सबसे अच्छा साथ:">Best with:</span> Milk</p>
+                        </div>
+
+                        <button class="btn-primary" data-en="Add to Cart" data-hi="कार्ट में जोड़ें" ><a href="order.html"><a href="order.html"><h4>Add to Cart</h4></a></button>
+                    </div>
+                </div>
+
+                <!-- Khajur Laddu -->
+                <div class="product-card">
+                   <div class="product-image">
+    <img src="khajur.jpg" alt="Khajur ke Laddu">
+</div>
+                    <div class="product-info">
+                        <h3 data-en="Khajur ke Laddu" data-hi="खजूर के लड्डू">Khajur ke Laddu</h3>
+                        <p class="product-price">₹2,500/kg</p>
+
+                        <div class="quantity-selector">
+                            <label data-en="Select Quantity" data-hi="मात्रा चुनें">Select Quantity</label>
+                            <select id="khajur-qty" onchange="updateCart('Khajur ke Laddu', 2500)">
+                                <option value="1">1 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="3">3 kg</option>
+                            </select>
+                        </div>
+
+                        <div class="product-benefits">
+                            <h4 data-en="Key Benefits" data-hi="मुख्य लाभ">Key Benefits</h4>
+                            <ul>
+                                <li data-en="Instant natural energy" data-hi="त्वरित प्राकृतिक ऊर्जा">Instant natural energy</li>
+                                <li data-en="Supports healthy hemoglobin level (nutrition support)" data-hi="स्वस्थ हीमोग्लोबिन स्तर का समर्थन (पोषण समर्थन)">Supports healthy hemoglobin level (nutrition support)</li>
+                                <li data-en="Good for heart & brain nourishment" data-hi="हृदय और मस्तिष्क पोषण के लिए उपयुक्त">Good for heart & brain nourishment</li>
+                                <li data-en="Sugar‑free preparation" data-hi="चीनी‑मुक्त तैयारी">Sugar‑free preparation</li>
+                                <li data-en="Improves memory & focus naturally" data-hi="स्मृति और ध्यान को प्राकृतिक रूप से सुधारता है">Improves memory & focus naturally</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-usage">
+                            <h4 data-en="Best Time & Tips" data-hi="सर्वोत्तम समय और सुझाव">Best Time & Tips</h4>
+                            <p><span class="usage-label" data-en="Best time:" data-hi="सर्वोत्तम समय:">Best time:</span> Morning or evening</p>
+                            <p><span class="usage-label" data-en="Best with:" data-hi="सबसे अच्छा साथ:">Best with:</span> Milk or fruits</p>
+                            <p><span class="usage-label" data-en="Avoid:" data-hi="बचाव:">Avoid:</span> Late night</p>
+                        </div>
+
+                        <button class="btn-primary" data-en="Add to Cart" data-hi="कार्ट में जोड़ें" ><a href="order.html"><a href="order.html"><h4>Add to Cart</h4></a></button>
+                    </div>
+                </div>
+
+                <!-- sonth Laddu -->
+                <div class="product-card">
+                    <div class="product-image">
+    <img src="sonth.jpg" alt="Sonth ke Laddu">
+</div>
+                    <div class="product-info">
+                        <h3 data-en="Sonth ke Laddu" data-hi="सोंठ के लड्डू">Sonth ke Laddu</h3>
+                        <p class="product-price">₹2,500/kg</p>
+
+                        <div class="quantity-selector">
+                            <label data-en="Select Quantity" data-hi="मात्रा चुनें">Select Quantity</label>
+                            <select id="sonth-qty" onchange="updateCart('sonth ke Laddu', 2500)">
+                                <option value="1">1 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="3">3 kg</option>
+                            </select>
+                        </div>
+
+                        <div class="product-benefits">
+                            <h4 data-en="Key Benefits" data-hi="मुख्य लाभ">Key Benefits</h4>
+                            <ul>
+                                <li data-en="Supports digestion comfort" data-hi="पाचन आराम का समर्थन करता है">Supports digestion comfort</li>
+                                <li data-en="Helps reduce body stiffness" data-hi="शरीर की अकड़न कम करने में मदद करता है">Helps reduce body stiffness</li>
+                                <li data-en="Good for women during periods" data-hi="मासिक धर्म के दौरान महिलाओं के लिए उपयुक्त">Good for women during periods</li>
+                                <li data-en="Supports liver wellness" data-hi="लिवर स्वास्थ्य का समर्थन करता है">Supports liver wellness</li>
+                                <li data-en="Helps reduce heaviness & bloating" data-hi="भारीपन और सूजन कम करने में मदद करता है">Helps reduce heaviness & bloating</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-usage">
+                            <h4 data-en="Best Time & Tips" data-hi="सर्वोत्तम समय और सुझाव">Best Time & Tips</h4>
+                            <p><span class="usage-label" data-en="Best time:" data-hi="सर्वोत्तम समय:">Best time:</span> After breakfast</p>
+                            <p><span class="usage-label" data-en="Avoid:" data-hi="बचाव:">Avoid:</span> Empty stomach</p>
+                            <p><span class="usage-label" data-en="Best with:" data-hi="सबसे अच्छा साथ:">Best with:</span> Warm water</p>
+                        </div>
+
+                        <button class="btn-primary" data-en="Add to Cart" data-hi="कार्ट में जोड़ें" ><a href="order.html"><a href="order.html"><h4>Add to Cart</h4></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" fill="#C9A961" opacity="0.2"/>
+                            <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#C9A961"/>
+                            <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                        </svg>
+                        <span data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+                    </div>
+                    <p data-en="Premium nutrition for families who value quality and wellness." data-hi="गुणवत्ता और स्वास्थ्य को महत्व देने वाले परिवारों के लिए प्रीमियम पोषण।">
+                        Premium nutrition for families who value quality and wellness.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                        <ul>
+                            <li><a href="products.html" data-en="Methi Laddu" data-hi="मेथी लड्डू">Methi Laddu</a></li>
+                            <li><a href="products.html" data-en="Gond Laddu" data-hi="गोंद लड्डू">Gond Laddu</a></li>
+                            <li><a href="products.html" data-en="Khajur Laddu" data-hi="खजूर लड्डू">Khajur Laddu</a></li>
+                            <li><a href="products.html" data-en="Sont Laddu" data-hi="सोंठ लड्डू">Sont Laddu</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Company" data-hi="कंपनी">Company</h4>
+                        <ul>
+                            <li><a href="about.html" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                            <li><a href="order.html" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+                        <ul>
+                            <li>+91 86299 33125</li>
+                            <li>shubhamvishvakarma01@gmail.com</li>
+                            <li data-en="Indore, Madhya Pradesh" data-hi="इंदौर, मध्य प्रदेश">Indore, Madhya Pradesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="© 2026 Dryfruit Meal. All rights reserved." data-hi="© 2026 ड्राईफ्रूट मील। सर्वाधिकार सुरक्षित।">© 2026 Dryfruit Meal. All rights reserved.</p>
+                <p class="footer-tagline" data-en="Crafted for families who value health" data-hi="उन परिवारों के लिए तैयार किया गया जो स्वास्थ्य को महत्व देते हैं">Crafted for families who value health</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

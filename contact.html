@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dryfruit Meal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <span id="langText">हिंदी</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#2D5F3F" opacity="0.1"/>
+                    <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#2D5F3F"/>
+                    <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                </svg>
+                <span class="brand-name" data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li><a href="products.html" class="nav-link" data-en="Products" data-hi="उत्पाद">Products</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                <li><a href="contact.html" class="nav-link active" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                <li><a href="order.html" class="btn-nav" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="section-label" data-en="CONTACT US" data-hi="संपर्क करें">CONTACT US</span>
+                <h1 class="hero-title" data-en="Get in Touch with Dryfruit Meal" data-hi="ड्राईफ्रूट मील से संपर्क करें">
+                    Get in Touch with<br>Dryfruit Meal
+                </h1>
+                <p class="hero-description" data-en="Have questions about our products, orders, or gifting? Reach out to us." data-hi="हमारे उत्पादों, ऑर्डर या गिफ्टिंग के बारे में सवाल हैं? हमसे संपर्क करें।">
+                    Have questions about our products, orders, or gifting? Reach out to us.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-en="Contact Information" data-hi="संपर्क जानकारी">Contact Information</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4 data-en="Phone" data-hi="फ़ोन">Phone</h4>
+                            <p>+91 86299 33125</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4 data-en="Email" data-hi="ईमेल">Email</h4>
+                            <p>shubhamvishvakarma01@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4 data-en="Address" data-hi="पता">Address</h4>
+                            <p data-en="Indore, Madhya Pradesh, India" data-hi="इंदौर, मध्य प्रदेश, भारत">Indore, Madhya Pradesh, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4 data-en="Working Hours" data-hi="कार्य समय">Working Hours</h4>
+                            <p data-en="Mon–Sat: 10:00 AM – 8:00 PM" data-hi="सोम–शनि: सुबह 10:00 – शाम 8:00">Mon–Sat: 10:00 AM – 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inquiry-form">
+                    <h3 data-en="Send Us a Message" data-hi="हमें संदेश भेजें">Send Us a Message</h3>
+                    <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+                        <div class="form-group">
+                            <label data-en="Full Name" data-hi="पूरा नाम">Full Name</label>
+                            <input type="text" id="inquiryName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-en="Email" data-hi="ईमेल">Email</label>
+                            <input type="email" id="inquiryEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-en="Mobile Number" data-hi="मोबाइल नंबर">Mobile Number</label>
+                            <input type="tel" id="inquiryMobile">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-en="Message" data-hi="संदेश">Message</label>
+                            <textarea id="inquiryMessage" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" data-en="Send Message" data-hi="संदेश भेजें">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        
+        </div>
+    </section>
+
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" fill="#C9A961" opacity="0.2"/>
+                            <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#C9A961"/>
+                            <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                        </svg>
+                        <span data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+                    </div>
+                    <p data-en="Premium nutrition for families who value quality and wellness." data-hi="गुणवत्ता और स्वास्थ्य को महत्व देने वाले परिवारों के लिए प्रीमियम पोषण।">
+                        Premium nutrition for families who value quality and wellness.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                        <ul>
+                            <li><a href="products.html" data-en="Methi Laddu" data-hi="मेथी लड्डू">Methi Laddu</a></li>
+                            <li><a href="products.html" data-en="Gond Laddu" data-hi="गोंद लड्डू">Gond Laddu</a></li>
+                            <li><a href="products.html" data-en="Khajur Laddu" data-hi="खजूर लड्डू">Khajur Laddu</a></li>
+                            <li><a href="products.html" data-en="Sont Laddu" data-hi="सोंठ लड्डू">Sont Laddu</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Company" data-hi="कंपनी">Company</h4>
+                        <ul>
+                            <li><a href="about.html" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                            <li><a href="order.html" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+                        <ul>
+                            <li>+91 86299 33125</li>
+                            <li>shubhamvishvakarma01@gmail.com</li>
+                            <li data-en="Indore, Madhya Pradesh" data-hi="इंदौर, मध्य प्रदेश">Indore, Madhya Pradesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="© 2026 Dryfruit Meal. All rights reserved." data-hi="© 2026 ड्राईफ्रूट मील। सर्वाधिकार सुरक्षित।">© 2026 Dryfruit Meal. All rights reserved.</p>
+                <p class="footer-tagline" data-en="Crafted for families who value health" data-hi="उन परिवारों के लिए तैयार किया गया जो स्वास्थ्य को महत्व देते हैं">Crafted for families who value health</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

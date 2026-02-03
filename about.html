@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dryfruit Meal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <span id="langText">हिंदी</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#2D5F3F" opacity="0.1"/>
+                    <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#2D5F3F"/>
+                    <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                </svg>
+                <span class="brand-name" data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li><a href="products.html" class="nav-link" data-en="Products" data-hi="उत्पाद">Products</a></li>
+                <li><a href="about.html" class="nav-link active" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                <li><a href="order.html" class="btn-nav" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="section-label" data-en="ABOUT US" data-hi="हमारे बारे में">ABOUT US</span>
+                <h1 class="hero-title" data-en="Premium Family Brand for Healthy Families" data-hi="स्वस्थ परिवारों के लिए प्रीमियम पारिवारिक ब्रांड">
+                    Premium Family Brand for<br>Healthy Families
+                </h1>
+                <p class="hero-description" data-en="Serving quality nutrition for families who believe health is an investment." data-hi="उन परिवारों के लिए गुणवत्ता पोषण प्रदान कर रहे हैं जो मानते हैं कि स्वास्थ्य एक निवेश है।">
+                    Serving quality nutrition for families who believe health is an investment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Story -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-story">
+                    <h3 data-en="Our Story" data-hi="हमारी कहानी">Our Story</h3>
+                    <p data-en="Dryfruit Meal began as a small family‑run kitchen in another city, where we perfected our recipes over years of experimentation and feedback from health‑conscious families." data-hi="ड्राईफ्रूट मील एक छोटे पारिवारिक रसोईघर के रूप में शुरू हुआ, जहां हमने वर्षों के प्रयोग और स्वास्थ्य‑जागरूक परिवारों की प्रतिक्रिया के साथ अपनी रेसिपी को परिष्कृत किया।">
+                        Dryfruit Meal began as a small family‑run kitchen in another city, where we perfected our recipes over years of experimentation and feedback from health‑conscious families.
+                    </p>
+                    <p data-en="Now, we are proud to bring the same premium quality and care to families in Indore, focusing on nutrition, natural ingredients, and family wellness." data-hi="अब, हम इंदौर के परिवारों को उसी प्रीमियम गुणवत्ता और देखभाल के साथ प्रदान करने पर गर्व महसूस करते हैं, जो पोषण, प्राकृतिक सामग्री और पारिवारिक स्वास्थ्य पर केंद्रित है।">
+                        Now, we are proud to bring the same premium quality and care to families in Indore, focusing on nutrition, natural ingredients, and family wellness.
+                    </p>
+                </div>
+
+                <div class="about-values">
+                    <div class="value-card">
+                        <div class="value-icon">🏆</div>
+                        <h4 data-en="Premium Quality" data-hi="प्रीमियम गुणवत्ता">Premium Quality</h4>
+                        <p data-en="We never compromise on ingredient quality or freshness, even if it means higher prices." data-hi="हम कीमत अधिक होने पर भी सामग्री की गुणवत्ता या ताजगी पर समझौता नहीं करते।">
+                            We never compromise on ingredient quality or freshness, even if it means higher prices.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h4 data-en="Natural Ingredients" data-hi="प्राकृतिक सामग्री">Natural Ingredients</h4>
+                        <p data-en="Only the finest dryfruits, nuts, and natural sweeteners are used in our laddus." data-hi="हमारे लड्डू में केवल बेहतरीन ड्राईफ्रूट्स, नट्स और प्राकृतिक मिठास का उपयोग किया जाता है।">
+                            Only the finest dryfruits, nuts, and natural sweeteners are used in our laddus.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">👨‍👩‍👧‍👦</div>
+                        <h4 data-en="Family‑Focused" data-hi="परिवार‑केंद्रित">Family‑Focused</h4>
+                        <p data-en="Every recipe is tested and approved for kids, elders, and everyday family consumption." data-hi="हर रेसिपी बच्चों, बुजुर्गों और दैनिक पारिवारिक उपभोग के लिए परीक्षण और अनुमोदित है।">
+                            Every recipe is tested and approved for kids, elders, and everyday family consumption.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">💪</div>
+                        <h4 data-en="Lifestyle Wellness" data-hi="जीवनशैली स्वास्थ्य">Lifestyle Wellness</h4>
+                        <p data-en="We focus on supporting balanced lifestyle, energy, and overall wellness, not medical claims." data-hi="हम संतुलित जीवनशैली, ऊर्जा और समग्र स्वास्थ्य का समर्थन करने पर ध्यान केंद्रित करते हैं, चिकित्सा दावों पर नहीं।">
+                            We focus on supporting balanced lifestyle, energy, and overall wellness, not medical claims.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" fill="#C9A961" opacity="0.2"/>
+                            <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#C9A961"/>
+                            <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                        </svg>
+                        <span data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+                    </div>
+                    <p data-en="Premium nutrition for families who value quality and wellness." data-hi="गुणवत्ता और स्वास्थ्य को महत्व देने वाले परिवारों के लिए प्रीमियम पोषण।">
+                        Premium nutrition for families who value quality and wellness.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                        <ul>
+                            <li><a href="products.html" data-en="Methi Laddu" data-hi="मेथी लड्डू">Methi Laddu</a></li>
+                            <li><a href="products.html" data-en="Gond Laddu" data-hi="गोंद लड्डू">Gond Laddu</a></li>
+                            <li><a href="products.html" data-en="Khajur Laddu" data-hi="खजूर लड्डू">Khajur Laddu</a></li>
+                            <li><a href="products.html" data-en="Sont Laddu" data-hi="सोंठ लड्डू">Sont Laddu</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Company" data-hi="कंपनी">Company</h4>
+                        <ul>
+                            <li><a href="about.html" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                            <li><a href="order.html" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+                        <ul>
+                            <li>+91 86299 33125</li>
+                            <li>shubhamvishvakarma01@gmail.com</li>
+                            <li data-en="Indore, Madhya Pradesh" data-hi="इंदौर, मध्य प्रदेश">Indore, Madhya Pradesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="© 2026 Dryfruit Meal. All rights reserved." data-hi="© 2026 ड्राईफ्रूट मील। सर्वाधिकार सुरक्षित।">© 2026 Dryfruit Meal. All rights reserved.</p>
+                <p class="footer-tagline" data-en="Crafted for families who value health" data-hi="उन परिवारों के लिए तैयार किया गया जो स्वास्थ्य को महत्व देते हैं">Crafted for families who value health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Dryfruit Meal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <span id="langText">हिंदी</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#2D5F3F" opacity="0.1"/>
+                    <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#2D5F3F"/>
+                    <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                </svg>
+                <span class="brand-name" data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li><a href="products.html" class="nav-link" data-en="Products" data-hi="उत्पाद">Products</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                <li><a href="order.html" class="nav-link active" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="section-label" data-en="ORDER NOW" data-hi="अभी ऑर्डर करें">ORDER NOW</span>
+                <h1 class="hero-title" data-en="Build Your Order" data-hi="अपना ऑर्डर बनाएं">
+                    Build Your Order
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form-section">
+        <div class="container">
+            <div class="order-form-container">
+                <!-- Customer Details -->
+                <div class="customer-details">
+                    <h3 data-en="Your Details" data-hi="आपका विवरण">Your Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Full Name *" data-hi="पूरा नाम *">Full Name *</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Mobile Number *" data-hi="मोबाइल नंबर *">Mobile Number *</label>
+                            <input type="tel" id="mobile" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Complete Address *" data-hi="पूरा पता *">Complete Address *</label>
+                        <textarea id="address" rows="3" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Cart Items -->
+                <div class="cart-section">
+                    <h3 data-en="Your Order" data-hi="आपका ऑर्डर">Your Order</h3>
+                    <div class="add-product-section">
+                        <button type="button" class="btn-add-product" onclick="addProductRow()">
+                            <span data-en="+ Add Laddu" data-hi="+ लड्डू जोड़ें">+ Add Laddu</span>
+                        </button>
+                    </div>
+                    <div id="cartItems"></div>
+                </div>
+
+                <!-- Total & Submit -->
+                <div class="order-summary">
+                    <div class="total-display">
+                        <div class="total-row">
+                            <span data-en="Subtotal" data-hi="उपयोग">Subtotal</span>
+                            <span id="subtotal">₹0</span>
+                        </div>
+                        <div class="total-row final">
+                            <span data-en="Total Amount" data-hi="कुल राशि">Total Amount</span>
+                            <span id="totalAmount">₹0</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-submit" id="proceedBtn" onclick="showPayment()" data-en="Proceed to Payment" data-hi="भुगतान करें">
+                        Proceed to Payment
+                    </button>
+                </div>
+            </div>
+
+            <!-- Payment Section -->
+            <div id="paymentSection" class="payment-section">
+                <div class="payment-header">
+                    <h3 data-en="Complete Your Payment" data-hi="भुगतान पूरा करें">Complete Your Payment</h3>
+                    <div class="order-summary-small">
+                        <div id="paymentSummary"></div>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <div class="qr-container">
+                        <div class="qr-label" data-en="Scan QR Code" data-hi="QR कोड स्कैन करें">Scan QR Code</div>
+                        <img src="qr.jpg" alt="UPI QR Code" class="qr-image">
+                        <div class="upi-id">7898950780@kotak811</div>
+                    </div>
+                </div>
+
+                <div class="whatsapp-section">
+                    <button onclick="sendWhatsApp()" class="btn-whatsapp">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.WhatsApp 9.87 0 0 1-5.031-1.446l-.232-.13-3.41-1.92-.13-.073c-.34-.194-.67-.407-.986-.609-1.145-.643-2.507-1.624-2.944-3.235-.438-1.611-.163-3.563.754-4.734l.166-.226 1.316-1.791c.164-.223.297-.489.411-.743.114-.254.069-.571-.1-.759-.169-.188-.5-.397-.955-.578-.455-.181-1.094-.319-1.595-.397-.501-.078-1.255-.086-1.833.184-.578.27-1.191.88-1.412 1.845-.221.965-.331 1.946-.222 2.847.109.901.686 1.732 1.342 2.225l.116.066 2.618 1.47c.292.164.622.311.952.445l.041.021 3.41 1.92c1.156.649 2.517 1.04 4.001 1.168.502.033 1.007.047 1.502.028 1.945-.068 3.482-.888 4.435-2.181.953-1.293 1.431-2.739 1.354-4.158-.077-1.412-.677-2.49-1.79-3.367-.606-.487-1.477-.877-2.451-1.149-.974-.272-1.95-.183-2.79.21-.84.393-1.609.998-2.166 1.677l-.083.106-.192.246c-.14.183-.27.489-.362.755-.092.266-.088.58.013.815.101.235.283.56.52.782.237.222.608.394.948.489.34.095.77.082 1.094-.026.324-.108.637-.293.906-.574.269-.281.526-.61.74-.97.214-.361.375-.776.465-1.203.09-.427.011-.872-.25-1.22-.261-.348-.704-.607-1.27-.712-.566-.105-1.18-.012-1.652.252-.472.264-.838.757-.99 1.362-.152.605-.1 1.249.16 1.789.26.54.768 1.022 1.464 1.28.696.258 1.43.288 2.135.08.705-.208 1.38-.723 1.91-1.433.53-1.11.793-2.342.707-3.54-.086-1.258-.715-2.327-1.879-3.009-.608-.291-1.274-.489-1.937-.533-.663-.044-1.339.059-1.944.293-.605.234-1.136.691-1.49 1.298-.354.607-.502 1.332-.384 2.035.118.703.558 1.344 1.2 1.758l.106.069.225.146c.183.119.389.222.603.293.214.071.455.074.684.004.229-.07.447-.211.605-.395.157-.184.284-.43.36-.71.076-.281.062-.591-.03-.85-.092-.259-.262-.505-.5-.668-.238-.163-.552-.252-.88-.233-.328.019-.656.142-.893.35-.237.208-.435.518-.546.877-.111.359-.104.761.02 1.083.124.322.385.576.748.695.363.119.802.048 1.087-.188z"/>
+                        </svg>
+                        <span data-en="Send Payment Screenshot" data-hi="भुगतान स्क्रीनशॉट भेजें">Send Payment Screenshot</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" fill="#C9A961" opacity="0.2"/>
+                            <path d="M20 8 L28 16 L20 24 L12 16 Z" fill="#C9A961"/>
+                            <circle cx="20" cy="28" r="4" fill="#C9A961"/>
+                        </svg>
+                        <span data-en="Dryfruit Meal" data-hi="ड्राईफ्रूट मील">Dryfruit Meal</span>
+                    </div>
+                    <p data-en="Premium nutrition for families who value quality and wellness." data-hi="गुणवत्ता और स्वास्थ्य को महत्व देने वाले परिवारों के लिए प्रीमियम पोषण।">
+                        Premium nutrition for families who value quality and wellness.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                        <ul>
+                            <li><a href="products.html" data-en="Methi Laddu" data-hi="मेथी लड्डू">Methi Laddu</a></li>
+                            <li><a href="products.html" data-en="Gond Laddu" data-hi="गोंद लड्डू">Gond Laddu</a></li>
+                            <li><a href="products.html" data-en="Khajur Laddu" data-hi="खजूर लड्डू">Khajur Laddu</a></li>
+                            <li><a href="products.html" data-en="Sont Laddu" data-hi="सोंठ लड्डू">Sont Laddu</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Company" data-hi="कंपनी">Company</h4>
+                        <ul>
+                            <li><a href="about.html" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                            <li><a href="order.html" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+                        <ul>
+                            <li>+91 86299 33125</li>
+                            <li>shubhamvishvakarma01@gmail.com</li>
+                            <li data-en="Indore, Madhya Pradesh" data-hi="इंदौर, मध्य प्रदेश">Indore, Madhya Pradesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="© 2026 Dryfruit Meal. All rights reserved." data-hi="© 2026 ड्राईफ्रूट मील। सर्वाधिकार सुरक्षित।">© 2026 Dryfruit Meal. All rights reserved.</p>
+                <p class="footer-tagline" data-en="Crafted for families who value health" data-hi="उन परिवारों के लिए तैयार किया गया जो स्वास्थ्य को महत्व देते हैं">Crafted for families who value health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        let cartItems = [];
+        let productCounter = 0;
+
+        // Language Toggle
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            document.getElementById('langText').textContent = currentLang === 'en' ? 'हिंदी' : 'English';
+            updateAllText();
+        }
+
+        function updateAllText() {
+            document.querySelectorAll('[data-en][data-hi]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        // Add Product Row
+        function addProductRow() {
+            productCounter++;
+            const productRow = `
+                <div class="cart-item" id="row-${productCounter}">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Product">Product</label>
+                            <select class="product-select" onchange="updateTotal()" required>
+                                <option value="" disabled selected data-en="Select Laddu" data-hi="लड्डू चुनें">Select Laddu</option>
+                                <option value="2500" data-en="Methi ke Laddu (₹2500/kg)" data-hi="मेथी के लड्डू (₹2500/kg)">Methi ke Laddu (₹2500/kg)</option>
+                                <option value="2500" data-en="Gond ke Laddu (₹2500/kg)" data-hi="गोंद के लड्डू (₹2500/kg)">Gond ke Laddu (₹2500/kg)</option>
+                                <option value="2500" data-en="Khajur ke Laddu (₹2500/kg)" data-hi="खजूर के लड्डू (₹2500/kg)">Khajur ke Laddu (₹2500/kg)</option>
+                                <option value="2500" data-en="Sont ke Laddu (₹2500/kg)" data-hi="सोंठ के लड्डू (₹2500/kg)">Sont ke Laddu (₹2500/kg)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Quantity (kg)">Quantity (kg)</label>
+                            <select class="qty-select" onchange="updateTotal()" required>
+                                <option value="1">1 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="3">3 kg</option>
+                            </select>
+                        </div>
+                        <div class="form-group remove-col">
+                            <button type="button" class="btn-remove" onclick="removeRow(${productCounter})" data-en="Remove" data-hi="हटाएं">✕</button>
+                        </div>
+                    </div>
+                    <div class="item-total">
+                        <span data-en="Item Total" data-hi="आइटम कुल">Item Total:</span>
+                        <span class="item-total-price">₹0</span>
+                    </div>
+                </div>
+            `;
+            document.getElementById('cartItems').insertAdjacentHTML('beforeend', productRow);
+            updateAllText();
+        }
+
+        // Remove Row
+        function removeRow(rowId) {
+            document.getElementById(`row-${rowId}`).remove();
+            updateTotal();
+        }
+
+        // Update Total Calculation
+        function updateTotal() {
+            let subtotal = 0;
+            cartItems = [];
+
+            document.querySelectorAll('.cart-item').forEach((row, index) => {
+                const price = parseInt(row.querySelector('.product-select').value) || 0;
+                const qty = parseInt(row.querySelector('.qty-select').value) || 0;
+                const productName = row.querySelector('.product-select option:checked').textContent;
+                const itemTotal = price * qty;
+
+                row.querySelector('.item-total-price').textContent = `₹${itemTotal}`;
+                
+                if (price > 0 && qty > 0) {
+                    cartItems.push({
+                        id: index,
+                        name: productName,
+                        price: price,
+                        qty: qty,
+                        total: itemTotal
+                    });
+                }
+                subtotal += itemTotal;
+            });
+
+            document.getElementById('subtotal').textContent = `₹${subtotal}`;
+            document.getElementById('totalAmount').textContent = `₹${subtotal}`;
+        }
+
+        // Show Payment Section
+        function showPayment() {
+            const name = document.getElementById('fullName').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            if (!name || !mobile || !address || cartItems.length === 0) {
+                alert(currentLang === 'en' ? 
+                    'Please fill all details and add at least one product' : 
+                    'कृपया सभी विवरण भरें और कम से कम एक उत्पाद जोड़ें');
+                return;
+            }
+
+            // Show payment section
+            document.getElementById('paymentSection').style.display = 'block';
+            document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+
+            // Update payment summary
+            const summaryHTML = cartItems.map(item => 
+                `<div>${item.name} x${item.qty}kg = ₹${item.total}</div>`
+            ).join('') + `<div class="total-final"><strong>₹${document.getElementById('totalAmount').textContent}</strong></div>`;
+            
+            document.getElementById('paymentSummary').innerHTML = summaryHTML;
+        }
+
+        // WhatsApp Integration
+        function sendWhatsApp() {
+            const name = document.getElementById('fullName').value;
+            const mobile = document.getElementById('mobile').value;
+            const address = document.getElementById('address').value;
+            const total = document.getElementById('totalAmount').textContent;
+            
+            const orderDetails = cartItems.map(item => `${item.name} x${item.qty}kg = ₹${item.total}`).join('\n');
+            const message = currentLang === 'en' ? 
+                `🛒 *Dryfruit Meal Order*\n\n👤 *Name:* ${name}\n📱 *Mobile:* ${mobile}\n📍 *Address:* ${address}\n\n🧾 *Order Details:*\n${orderDetails}\n\n💰 *Total: ${total}*\n\n📸 *Payment Screenshot Attached*\n\nPlease confirm my order!` :
+                `🛒 *ड्राईफ्रूट मील ऑर्डर*\n\n👤 *नाम:* ${name}\n📱 *मोबाइल:* ${mobile}\n📍 *पता:* ${address}\n\n🧾 *ऑर्डर विवरण:*\n${orderDetails}\n\n💰 *कुल: ${total}*\n\n📸 *भुगतान स्क्रीनशॉट संलग्न*\n\nकृपया मेरा ऑर्डर कन्फर्म करें!`;
+
+            const whatsappNumber = '918629933125'; // Replace with your WhatsApp number
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            addProductRow(); // Add first empty row
+        });
+    </script>
+</body>
+</html>
